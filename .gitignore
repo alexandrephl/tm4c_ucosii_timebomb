@@ -1,55 +1,72 @@
-# Prerequisites
-*.d
+# ==========================================================
+# TM4C123 / Code Composer Studio (GNU ARM) Project
+# ==========================================================
 
-# Object files
-*.o
-*.ko
-*.obj
+# --- Build output directories ---
+/Debug/
+/Release/
+/build/
+/out/
+
+# --- Build artifacts ---
 *.elf
-
-# Linker output
-*.ilk
+*.out
+*.axf
+*.bin
+*.hex
 *.map
-*.exp
+*.lst
+*.d    # dependency files
+*.o
+*.obj
 
-# Precompiled Headers
-*.gch
-*.pch
+# --- Intermediate / temp files ---
+*.su
+*.tmp
+*.idb
+*.pdb
+*.dSYM/
+*.dwo
+*.dep
 
-# Libraries
-*.lib
+# --- Compiler/Linker generated backups ---
+*.bak
+*.old
+*~
+
+# --- CCS / Eclipse metadata ---
+.settings/
+.metadata/
+*.launch
+*.ccxml
+*.cproject.bak
+*.project.bak
+
+# --- Libraries and archives ---
 *.a
+*.lib
 *.la
 *.lo
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+# --- Logs ---
+*.log
 
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
+# --- OS junk ---
+.DS_Store
+Thumbs.db
+ehthumbs.db
 
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
+# --- Optional: ignore TivaWare if not bundled ---
+# /TivaWare/
+# /tivaware_c_series/
 
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+# --- Optional: generated documentation ---
+/docs/html/
+/docs/latex/
+/coverage/
 
-# debug information files
-*.dwo
+# --- IDE autosave / swap ---
+*.swp
+*.swo
+*.save
+*.save.*
