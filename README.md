@@ -15,7 +15,7 @@ It demonstrates clean separation between RTOS tasks, active objects, and asynchr
 ├── ucos2/               		    # µC/OS-II kernel sources 
 |  
 ├── ucos2_ports/               		# µC/OS-II port for Cortex-M4 
-|
+|  
 ├── ek-tm4c123gxl/               	# Board/Microcontroller-specific files  
 |  
 ├── CMSIS/               		    # CMSIS core headers  
