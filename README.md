@@ -12,9 +12,9 @@ It demonstrates clean separation between RTOS tasks, active objects, and asynchr
 |  
 ├── Application/                 	# Your application logic (main, bsp, uc_ao...)  
 |  
-├── ucos2/               		    # µC/OS-II kernel sources 
+├── ucos2/               		    # µC/OS-II kernel sources  
 |  
-├── ucos2_ports/               		# µC/OS-II port for Cortex-M4 
+├── ucos2_ports/               		# µC/OS-II port for Cortex-M4  
 |  
 ├── ek-tm4c123gxl/               	# Board/Microcontroller-specific files  
 |  
