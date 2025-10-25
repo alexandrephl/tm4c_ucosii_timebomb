@@ -1,9 +1,9 @@
-TM4C123 RTOS Demo with uC/OS-II (Active Object “TimeBomb”)
+# TM4C123 uC/OS-II “TimeBomb” Demo
 
-![Demo Screenshot or Board Photo](img/pic_board.jpg)
+![EK-TM4C123GXL LaunchPad](img/pic_board.jpg)
 
-A compact embedded RTOS example on the EK-TM4C123GXL (Cortex-M4F) using the uC/OS-II kernel with a lightweight Active Object (AO) framework.
-It demonstrates event-driven state machines, time-based transitions, and LED control triggered by debounced button inputs.
+An event-driven embedded demo running on the **EK-TM4C123GXL (Cortex-M4F)** using the **uC/OS-II real-time kernel** combined with a lightweight **Active Object framework** (included in this repository).  
+It demonstrates clean separation between RTOS tasks, active objects, and asynchronous events, while maintaining full portability and readability.
 
 ---
 
@@ -12,10 +12,10 @@ It demonstrates event-driven state machines, time-based transitions, and LED con
 |  
 ├── Application/                 	# Your application logic (main, bsp, uc_ao...)  
 |  
-├── ucos2/               		    # µC/OS-II kernel sources 
+├── ucos2/               		    # µC/OS-II kernel sources  
 |  
-├── ucos2_ports/               		# µC/OS-II port for Cortex-M4 
-|
+├── ucos2_ports/               		# µC/OS-II port for Cortex-M4  
+|  
 ├── ek-tm4c123gxl/               	# Board/Microcontroller-specific files  
 |  
 ├── CMSIS/               		    # CMSIS core headers  
@@ -28,35 +28,33 @@ It demonstrates event-driven state machines, time-based transitions, and LED con
 
 ### Prerequisites
 
-- **Code Composer Studio (CCS)** or GCC ARM toolchain  
-- **TivaWare SDK** (not included in repo)  
-- **µC/OS-II (V2.93)** included in this repo under ucos2/
-- **Active Object framework** ((adapted from Quantum Leaps uC/AO))
+- **Code Composer Studio (CCS)** v12 or later  
+- **EK-TM4C123GXL** LaunchPad  
+- **TivaWare SDK** (for low-level drivers, not bundled in repo)
 
-### Importing in CCS
+### To Build:
 
 1. **Import project**:
-  - `File → Import CCS Projects` → select this repo’s root folder.
-2. **Tivaware path setting**:
-	-When prompted, set build variable in Project Properties → C/C++ Build → Build Variables:
+  - `File → Import → Code Composer Studio → CCS Projects` → select this repo’s root folder.
+2. **Set build variable for TivaWare (once)**:
+	-In CCS: *Project → Properties → C/C++ Build → Build Variables*:
+		Add: 
 		•	Name: TIVAWARE_ROOT
 		•	Value: your TivaWare path (e.g. C:/ti/TivaWare_C_Series-2.2.0.295)
-2. **Include path setup**:
-   - Add paths in Project Properties → CCS Build → GNU Compiler → Directories:
-     ```
-     ${ProjDirPath}/Application
-     ${ProjDirPath}/ek-tm4c123gxl
-     ${ProjDirPath}/CMSIS/include
-     ${ProjDirPath}/ucos2
-     ${ProjDirPath}/ucos2_ports
-     ${TIVAWARE_ROOT}
-     ```
-3. **Build configuration**: Only one kernel compilation model is used:
-✅ Include: ucos2/ucos_ii.c
-🚫 Exclude: all other ucos2/os_*.c files
-(This is already set in the project so it builds right away.)
-4. **Linker script (if needed)**: Uses ek-tm4c123gxl/lesson.ld (custom script included).
-5. **Build and flash** — connect the LaunchPad, flash via CCS.
+5. **Build and flash**:
+	- Connect the LaunchPad via USB  
+	- Click the debug icon or *Run → Debug* to flash and start execution.
+
+## 💡 How It Works
+
+This project implements a small **reactive system** using the **Active Object pattern** — each component runs as an independent task that reacts to events instead of polling hardware.
+
+### 🔁 Main Concept
+The **TimeBomb Active Object** models a simple countdown device:
+- When the user **presses the button**, the TimeBomb becomes *armed*.
+- It then **blinks the red LED five times**, using time-based events.
+- After the countdown finishes, it enters the **“boom”** state — all LEDs on.
+- The system can then be reset manually or by restarting.
 
 ## 📄 License & Credits
 
