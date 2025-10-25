@@ -9,7 +9,7 @@
 	<codegenToolVersion value="GNU_9.2.1:FSF"/>
 	<isElfFormat value="true"/>
 	<connection value="common/targetdb/connections/Stellaris_ICDI_Connection.xml"/>
-	<linkerCommandFile value="lesson.ld"/>
+	<linkerCommandFile value="tm4c123gxl_ucos2.ld"/>
 	<rts value="libc.a"/>
 	<createSlaveProjects value=""/>
 	<templateProperties value="id=com.ti.common.project.core.emptyProjectWithMainTemplate_gnu_arm"/>

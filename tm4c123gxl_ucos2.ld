@@ -1,13 +1,13 @@
-/*****************************************************************************
-* Product: Linker script for EK-TM4C123GXL, GNU-ARM linker
-* Last Updated for Version: 5.9.8
-* Date of the Last Update:  2017-09-13
+/******************************************************************************
+* @file    tm4c123gxl_ucos2.ld
+* @brief   GNU linker script for EK-TM4C123GXL (TM4C123GH6PM) + µC/OS-II
+* @board   EK-TM4C123GXL (TM4C123GH6PM)
+* @author  Alexandre Panhaleux
 *
-*                    Q u a n t u m     L e a P s
-*                    ---------------------------
-*                    innovating embedded systems
+* @note    Based on Quantum Leaps QP/C template.
 *
-* Copyright (C) Quantum Leaps, LLC. All rights reserved.
+* Copyright	(C) Quantum Leaps, LLC.
+*		(C) Modifications 2025 Alexandre Panhaleux.
 *
 *****************************************************************************/
 OUTPUT_FORMAT("elf32-littlearm", "elf32-bigarm", "elf32-littlearm")
@@ -23,7 +23,7 @@ MEMORY { /* memory map of Tiva TM4C123GH6PM */
 STACK_SIZE = 1024;
 
 /* The size of the heap used by the application. NOTE: you need to adjust   */
-HEAP_SIZE = 1024;
+HEAP_SIZE = 0;
 
 SECTIONS {
 
