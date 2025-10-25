@@ -50,11 +50,11 @@ It demonstrates clean separation between RTOS tasks, active objects, and asynchr
 This project implements a small **reactive system** using the **Active Object pattern** — each component runs as an independent task that reacts to events instead of polling hardware.
 
 ### 🔁 Main Concept
-The **TimeBomb Active Object** models a simple countdown device:
-- When the user **presses the button**, the TimeBomb becomes *armed*.
-- It then **blinks the red LED five times**, using time-based events.
-- After the countdown finishes, it enters the **“boom”** state — all LEDs on.
-- The system can then be reset manually or by restarting.
+The **TimeBomb Task** models a simple countdown device:
+	- When the user **presses SW1**, the TimeBomb becomes *armed* and starts the 		countdown.  
+	- It then **blinks the red LED five times**, using time-based events managed by 	µC/OS-II timers.  
+	- After the countdown finishes, it enters the **“boom”** state — all LEDs on.  
+	- The system can then be reset manually or by restarting.
 
 ## 📄 License & Credits
 
