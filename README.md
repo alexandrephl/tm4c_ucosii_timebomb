@@ -41,7 +41,7 @@ It demonstrates clean separation between RTOS tasks, active objects, and asynchr
 		Add: 
 		•	Name: TIVAWARE_ROOT
 		•	Value: your TivaWare path (e.g. C:/ti/TivaWare_C_Series-2.2.0.295)
-5. **Build and flash**:
+3. **Build and flash**:
 	- Connect the LaunchPad via USB  
 	- Click the debug icon or *Run → Debug* to flash and start execution.
 
